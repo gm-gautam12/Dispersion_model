@@ -20,7 +20,7 @@ const App = () => {
     setError(null);
     
     try {
-      const response = await axios.post('http://localhost:8000/api/simulate', formData);
+      const response = await axios.post('/api/simulate', formData);
       setResults(response.data);
     } catch (err) {
       setError('Error running simulation. Please try again.');
@@ -132,7 +132,7 @@ const App = () => {
           <h2 className="text-xl font-semibold mb-4">Results</h2>
           
           {results && (
-            <div className="space-y-6">
+            <div className="space-y-7">
               <div className="h-64">
                 <LineChart
                   width={500}
@@ -153,7 +153,8 @@ const App = () => {
                     label={{
                       value: 'Concentration (kg/m³)',
                       angle: -90,
-                      position: 'insideLeft'
+                      position: 'insideLeft',
+                      offset: -10 
                     }}
                   />
                   <Tooltip />
@@ -167,7 +168,7 @@ const App = () => {
                 </LineChart>
               </div>
               
-              <div className="mt-4">
+              <div className="mt-5">
                 <h3 className="font-semibold mb-2">Numerical Results</h3>
                 <div className="max-h-48 overflow-y-auto">
                   <table className="min-w-full">
