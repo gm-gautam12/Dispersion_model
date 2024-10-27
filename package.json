@@ -1,0 +1,29 @@
+{
+  "name": "assignment_ah",
+  "version": "1.0.0",
+  "description": "the assignment",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon backend/index.js",
+    "start": "node backend/index.js",
+    "build":"npm install && npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gm-gautam12/Dispersion_model.git"
+  },
+  "author": "Gautam Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gm-gautam12/Dispersion_model/issues"
+  },
+  "homepage": "https://github.com/gm-gautam12/Dispersion_model#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.3",
+    "nodemon": "^3.1.7"
+  }
+}
