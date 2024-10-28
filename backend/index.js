@@ -12,10 +12,11 @@ app.use(cors());
 app.use(express.json());
 
 
-mongoose.connect('mongodb+srv://njoygautam12:Gautam3112@cluster0.pkqeo.mongodb.net', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect('mongodb+srv://njoygautam12:Gautam3112@cluster0.pkqeo.mongodb.net').then( ()=> {
+  console.log("Connection to MongoDB Successfull");
+}).catch((err)=>{
+  console.log(err);
+})
 
 const simulationSchema = new mongoose.Schema({
   releaseAmount: Number,
